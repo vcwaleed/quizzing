@@ -1,0 +1,9 @@
+@use "sass:map"; 
+@use "./variables" as *; 
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
