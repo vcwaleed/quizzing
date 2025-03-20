@@ -57,13 +57,10 @@ const handleClick = () => {
     }
   }
   &.secondary {
-    background-color: #6c757d;
+    background-image: linear-gradient(to left, #7dd4ff, $btn_color);
     color: white;
-    &:hover {
-      background-color: #5a6268;
-    }
     &:active {
-      transform: scale(0.98);
+      transform: scale(0.99);
     }
   }
 
@@ -83,8 +80,9 @@ const handleClick = () => {
   }
 
   &.medium {
-    padding: 10px 20px;
+    padding: 18px 14px;
     font-size: 16px;
+    font-family: sans-serif;
   }
   &.large {
     padding: 13px 20px;
