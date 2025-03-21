@@ -34,6 +34,24 @@ import ButtonComponent from "./ButtonComponent.vue";
     flex-direction: column;
     font-size: x-large;
     color: $heading_color;
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: fadeInUp 1s forwards;
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px); 
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .heading_div {
+      display: flex;
+      flex-direction: column;
+    }
+
     span {
       color: $sub_text_color;
       font-weight: 400;

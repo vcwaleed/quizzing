@@ -151,7 +151,7 @@ h2 {
 }
 
 .highlight {
-  color: #00ff99;
+  color: $secondary-color;
   font-weight: bold;
 }
 </style>

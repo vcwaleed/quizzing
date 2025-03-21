@@ -6,6 +6,7 @@ const handleButtonClick = () => {
 };
 
 const Navbar_links = [
+{ name: 'Home', path: '/' },
   { name: 'Create Quiz', path: '/createquiz' },
   { name: 'Give Quiz', path: '/givequiz' },
 ];
