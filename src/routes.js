@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router'
 import HomePage from './views/HomePage.vue';
 import CreatquizComponent from './views/CreatquizComponent.vue';
+import GivequizComponent from './views/GivequizComponent.vue';
 const routes=[
     {
         name: "HomePage",
@@ -12,6 +13,13 @@ const routes=[
         name:"CreatquizComponent",
         path:'/createquiz',
         component:CreatquizComponent 
+    }
+    ,
+    {
+        name:"GivequizComponent",
+        path:'/givequiz',
+        component:GivequizComponent
+
     }
 ]
 
