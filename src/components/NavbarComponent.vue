@@ -55,7 +55,7 @@ const Navbar_links = [
       padding-left: 8px;
       font-weight: lighter;
       font-size: x-large;
-      font-family: sans-serif;
+      font-family: 'Trebuchet MS';
       color: $title_col;
     }
   }
@@ -71,7 +71,7 @@ const Navbar_links = [
       flex-direction: row;
       color: $sub_text_color;
       padding-right: 80px;
-      font-family: sans-serif;
+      font-family: 'Trebuchet MS';
       font-weight: lighter;
 
       ul {

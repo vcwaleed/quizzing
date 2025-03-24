@@ -3,6 +3,39 @@ import { OhVueIcon, addIcons } from "oh-vue-icons";
 import { GiCube } from "oh-vue-icons/icons";
 import { BiBook } from "oh-vue-icons/icons";
 import { BiFilm } from "oh-vue-icons/icons";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+import {  ref, onMounted, onUnmounted } from "vue";
+const featureShowcaseRef = ref(null);
+let observer = null;
+const handleIntersection = (entries) => {
+  const entry = entries[0];
+  if (entry.isIntersecting) {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: false, 
+    });
+  }
+};
+
+onMounted(() => {
+  observer = new IntersectionObserver(handleIntersection, {
+    root: null, 
+    threshold: 0.2,
+  });
+
+  if (featureShowcaseRef.value) {
+    observer.observe(featureShowcaseRef.value);
+  }
+});
+
+onUnmounted(() => {
+  if (observer && featureShowcaseRef.value) {
+    observer.unobserve(featureShowcaseRef.value);
+  }
+});
 addIcons(GiCube , BiBook , BiFilm);
 const cardData = [
   {
@@ -31,7 +64,7 @@ const cardData = [
 
 </script>
 <template>
-  <section class="wrapper">
+  <section ref="featureShowcaseRef" class="wrapper">
     <div class="svg_div">
       <svg height="150" width="200" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -49,19 +82,15 @@ const cardData = [
         </defs>
       </svg>
     </div>
-    <div class="text-wrapper">
-      <h2>Quizzy comes with</h2>
-      <h2>amazing <span class="highlight">features</span> like:</h2>
+    <div class="text-wrapper" data-aos="fade-up">
+      <h2>Quizzy comes with <br />amazing <span class="highlight">features</span> like:</h2>
     </div>
   </section>
+
   <section class="main-card">
-    <div 
-      v-for="(item, index) in cardData" 
-      :key="index" 
-      class="card"
-    >
+    <div v-for="(item, index) in cardData" :key="index" class="card" data-aos="zoom-in">
       <div class="icon" :style="{ backgroundColor: item.bgColor }">
-        <OhVueIcon :name="item.icon" class="custom-icon" :style="{ color: item.iconColor } " />
+        <OhVueIcon :name="item.icon" class="custom-icon" :style="{ color: item.iconColor }" />
       </div>
       <h3>{{ item.title }}</h3>
       <p>{{ item.description }}</p>
@@ -69,13 +98,13 @@ const cardData = [
   </section>
 </template>
 
+
 <style scoped lang="scss">
 @use '../styles/variables' as * ;
 .main-card {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   gap: 40px;
 }
 .card {
@@ -89,6 +118,7 @@ const cardData = [
   align-items: center;
   text-align: center;
   transition: transform 0.3s ease-in-out;
+  font-family: 'Trebuchet MS';
 
   &:hover {
     transform: translateY(-5px);
@@ -126,6 +156,7 @@ const cardData = [
   justify-content: flex-start;
   position: relative;
   padding: 40px;
+  font-family: 'Trebuchet MS';
 }
 
 .svg_div {
@@ -147,7 +178,7 @@ h2 {
   font-size: 1.8rem;
   font-weight: 600;
   color: #333;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Trebuchet MS';
 }
 
 .highlight {

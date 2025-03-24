@@ -8,7 +8,7 @@
       <span>Quizzy</span>
     </div>
     <div class="social-icons">
-        <img src="../assets/internet.svg" width="40px"/>
+        <img src="../assets/internet.svg" width="30px"/>
         <img src="../assets/instagram.svg" width="40px"/>
         <img src="../assets/linkedin.svg" width="40px"/>
 
@@ -23,16 +23,17 @@
   background-color: #fdfdfd;
   justify-content: space-between;
   padding: 50px;
-  margin-top: 40px;
+  margin-top: 10px;
   .logo_div {
     display: flex;
+    flex-direction: column;
     align-items: center;
     
     span {
       padding-left: 8px;
       font-weight: lighter;
       font-size: x-large;
-      font-family: sans-serif;
+      font-family: 'Trebuchet MS';
       color: $title_col;
     }
   }

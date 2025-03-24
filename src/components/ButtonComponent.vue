@@ -57,7 +57,7 @@ const handleClick = () => {
     }
   }
   &.secondary {
-    background-image: linear-gradient(to left, #7dd4ff, $btn_color);
+    background-image: linear-gradient(to left, #3381a8, $btn_color);
     color: white;
     &:active {
       transform: scale(0.99);
@@ -80,12 +80,12 @@ const handleClick = () => {
   }
 
   &.medium {
-    padding: 18px 14px;
+    padding: 15px 14px;
     font-size: 16px;
-    font-family: sans-serif;
+    font-family: 'Trebuchet MS';
   }
   &.large {
-    padding: 13px 20px;
+    padding: 10px 20px;
     font-size: 18px;
   }
 
